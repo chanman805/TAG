@@ -9,10 +9,41 @@
 body, html {
 background-color:white;
 color:black;
+text-align:center;
+}
+
+body {
+font-size:1em;
+width:50%;
+margin-left:auto;
+margin-right:auto;
+}
+
+#body {
+margin:5vmin;
+margin-top:7.5vmin;
 }
 
 h1 {
 font-family: 'Courier Prime';
+font-size:5em;
+width:70%;
+margin-left:auto;
+margin-right:auto;
+}
+
+p {
+font-family: 'Courier New';
+width:70%;
+margin-left:auto;
+margin-right:auto;
+font-weight:bold;
+font-size:1.5em;
+}
+
+.item {
+opacity:0%;
+transition: all 1.5s;
 }
 
 </style>
@@ -20,8 +51,73 @@ font-family: 'Courier Prime';
 </head>
 
 <body>
+<div id = "body">
+<h1 class = "item" >Thanks.</h1>
+<p class = "item" style = "margin-top:-1vmax">Did you think this was going to last forever?</p>
+<p class = "item" >I certainly did.</p>
 
-<h1>Thanks.</h1>
+
+<img class = "item" src= "legacy/images/chan.png" width = "100%" style = "border-radius:20px"></img>
+
+
+<p class = "item">If there's one thing that this comic has taught me, over and over again, it's that <i>change happens</i>.</p>
+<p class = "item">Sometimes it's finding out your syllabus had a typo and finals are actually next week.</p>
+<p class = "item">But sometimes it means moving on from something you've grown to love.</p>
+
+<img class = "item" src= "legacy/images/point.png" width = "100%" style = "border-radius:20px"></img>
+
+<p class = "item">I created <i>The Alder Groove</i> back in 2016 as a fun inside joke; never really expecting it to outlive Algebra I, much less become the face of the school.</p>
+<p class = "item">Early comics consisted of me and a few of my friends roasting "the establishment" - but by the end of 2019, Merlin's face was on an inspirational poster.</p>
+
+<img class = "item" src= "legacy/images/poster.jpg" width = "100%" style = "border-radius:20px"></img>
+
+<p class = "item">I enjoyed every minute that I put my pencil to the paper. It was a way for me to get creative, to vent, maybe work in an easter egg or two.</p>
+
+<p class = "item">And I know that a lot of you out there are reading this and thinking, "What the heck, man?" Maybe you can't even find the words, you're so disappointed.</p>
+
+<img class = "item" src= "legacy/images/comic2.png" width = "100%" style = "border-radius:20px"></img>
+
+<p class = "item"><i>The Alder Groove</i> was never intended to be permanent.  That's what this is all about - me, stepping aside and letting those inspired by my work pick up on it.</p>
+
+<p class = "item"> It's up to the next batch of bewildered freshmen to churn out the funnies, and I'm curious to see what they come up with.</p>
+ 
+ <img class = "item" src= "legacy/images/ha.png" width = "100%" style = "border-radius:0px"></img>
+ 
+<p class = "item">But as for me, I'd like to move on. I'd like to find new experiences, meet new people, go do some cool stuff elsewhere. </p>
+
+
+<p class = "item">If it's okay with all of you, I'd like to close the book and open another one.</p>
+
+ <img class = "item" src= "legacy/images/ha.png" width = "100%" style = "border-radius:0px"></img>
+
+<p class = "item">So thanks. </p>
+
+<p class = "item">To all of you who critiqued and proofread my drafts, thanks. And to all of you who laughed, thanks. </p>
+
+<p class = "item">Thanks. </p>
+
+
+
+</div>
 </body>
+<script>
 
+var counter = 0;
+
+var slideshow = function(num){
+document.getElementsByClassName('item')[num].style.opacity = "100%";
+counter = counter+1;
+
+setTimeout(function(){
+slideshow(counter);
+},0);
+};
+
+window.onload = function(){
+
+slideshow(0);
+
+};
+
+</script>
 </html>
