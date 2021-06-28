@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="The Alder Groove is a web comic about high school.">
+<meta name="description" content="The Alder Groove is a web comic that explores the ups, downs, and drama of high school. ">
+<meta name="author" content="Chandler Mrotzek">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
+<link rel="icon" href="images/light_icon.png" id="light-scheme-icon">
+
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+<title>The Acacia Grove: An Alder Groove Collection</title>
+<style>
+body  {
+  background-color: #000000;
+  background-image: url(""); 
+  background-size: 90%;
+  background-position: top;
+  background-repeat: no-repeat;
+  overflow:hidden;
+  
+}
+#buttonGOL, #buttonGOR {
+ cursor: pointer;
+ transition: all 0.5s;
+ opacity:80%;
+  position: absolute;
+  top:75%;
+  padding: 50px;
+  color: white;
+  background-color: Transparent;
+  font-family: 'Courier Prime';
+  font-size: 75px;
+  border-radius: 5px;
+  user-select: none;
+  border:none;
+  outline:none;
+}
+
+#buttonGOR {
+  right: 0%;
+  border-radius: 3px 0 0 3px;
+}
+
+#buttonGOR:hover, buttonGOL:hover{
+transition: all 0.5s;
+opacity:100%;
+}
+
+#buttonGOL {
+  left: 0%;
+  border-radius: 3px 0 0 3px;
+}
+
+#logo:hover {
+transition: all 0.5s;
+cursor:pointer;
+width:17%;
+height:17%;
+}
+
+</style>
+<head>
+</head>
+<body>
+<button id = "buttonGOL" onclick = "back()"><strong><</strong></button>
+<img id = "logo" onclick = "window.location.replace('index.html');" width = "30%" style = "z-index:100;filter:invert(100%);border-radius:10px;position:fixed;top:80%;margin-left:33%" src = "images/logo.png" ></img>
+<center>
+<p style = "filter:invert(100%);font-family:'Courier New', bold;font-size:11px;border-radius:10px;padding-top:167%;padding-left:2%;opacity:65%">(Done reading?)</p>
+</center>
+<button id = "buttonGOR"onclick = "forward()"><strong>></strong></button>
+</body>
+<script>
+
+var pagenum = 0;
+var page1 ="images/acaciagrove/1.png";
+var page2= "images/acaciagrove/2.png";
+var page3= "images/acaciagrove/3.png";
+var page4= "images/acaciagrove/4.png";
+var page5= "images/acaciagrove/5.png";
+var page6= "images/acaciagrove/6.png";
+var page7= "images/acaciagrove/7.png";
+var page8= "images/acaciagrove/8.png";
+var page9= "images/acaciagrove/9.png";
+var page10= "images/acaciagrove/10.png";
+var page11= "images/acaciagrove/11.png";
+var page12= "images/acaciagrove/12.png";
+var page13= "images/acaciagrove/13.png";
+var page14= "images/acaciagrove/14.png";
+var page15= "images/acaciagrove/15.png";
+var page16= "images/acaciagrove/16.png";
+var page17= "images/acaciagrove/17.png";
+var page18= "images/acaciagrove/18.png";
+var page19= "images/acaciagrove/19.png";
+var page20= "images/acaciagrove/33.png";
+var page21= "images/acaciagrove/21.png";
+var page22= "images/acaciagrove/22.png";
+var page23= "images/acaciagrove/23.png";
+var page24= "images/acaciagrove/24.png";
+var page25= "images/acaciagrove/25.png";
+var page26= "images/acaciagrove/26.png";
+var page27= "images/acaciagrove/27.png";
+var page28= "images/acaciagrove/28.png";
+var page29= "images/acaciagrove/29.png";
+var page30= "images/acaciagrove/30.png";
+var page31= "images/acaciagrove/31.png";
+var page32= "images/acaciagrove/32.png";
+var page34= "images/acaciagrove/34.png";
+var page35= "images/acaciagrove/35.png";
+var page36= "images/acaciagrove/36.png";
+var page37= "images/acaciagrove/37.png";
+var page38= "images/acaciagrove/38.png";
+var page39= "images/acaciagrove/39.png";
+var page40= "images/acaciagrove/40.png";
+var page41= "images/acaciagrove/41.png";
+var page42= "images/acaciagrove/42.png";
+var cover= "images/acaciagrove/cover.png";
+var introduction = "images/acaciagrove/introduction.png";
+var ackend = "images/acaciagrove/ack-end.png";
+var epilogue3 = "images/acaciagrove/epilogue3.png";
+var pages = [cover, introduction, page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16, page17, page18, page19, page20, page21, page22, page23, page24, page25, page26, page27, page28, page29, page30, page31, page32, page34, page35, page36, page37, page38, page39, page40, page41, page42, epilogue3, ackend];
+
+var back = function(){
+if (pages[pagenum] === page1||pages[pagenum] === cover){
+pagenum = 0;
+document.body.style = "background-image: url("+pages[pagenum]+");";
+document.getElementById("buttonGOL").style.display = "none";
+alert("This is the beginning. Content is is to your right.");
+} else {
+pagenum = pagenum-1;
+document.body.style = "background-image: url("+pages[pagenum]+");";
+document.getElementById("buttonGOL").style.display = "block";
+}
+};
+
+var forward = function(){
+if (pages[pagenum] === ackend){
+alert("You've finished the book - congratulations!");
+window.location.replace("index.html");
+} else {
+document.getElementById("buttonGOR").style.display = "block";
+document.getElementById("buttonGOL").style.display = "block";
+pagenum = pagenum+1;
+document.body.style = "background-image: url("+pages[pagenum]+");";
+}
+};
+window.onload = function(){
+document.getElementById("buttonGOL").style.display = "none";
+document.body.style = "background-image: url('images/acaciagrove/cover.png')";
+};
+</script>
+</html>

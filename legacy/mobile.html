@@ -1,0 +1,742 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="The Alder Groove is a web comic about high school.">
+<meta name="description" content="The Alder Groove is a web comic that explores the ups, downs, and drama of high school. ">
+<meta name="author" content="Chandler Mrotzek">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
+<link rel="icon" href="images/light_icon.png" id="light-scheme-icon">
+
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+<title>The Alder Groove</title>
+<style>
+body, html {
+background-color:white;
+background-image: url("images/loader.gif");
+background-size:contain;
+background-repeat:no-repeat;
+background-position:50% 20%;
+color:black;
+overflow-x:hidden;
+overflow-y:auto;
+transition:all 1.5s, opacity 0.75s;
+cursor:default;
+font-family: 'Courier Prime';
+scrollbar-gutter:auto;
+text-overflow: ellipsis;
+white-space:normal;
+}
+
+#cover {
+background-color: white;
+color: black;
+position:fixed;
+transition: all 1s, opacity 0.75s;
+text-align:center;
+padding:100%;
+top:0%;
+display:none;
+}
+
+#navbar{
+position:sticky;
+text-align:center;
+top:auto;
+background-color: #1a1a1a;
+color:white;
+width:100%;
+text-align:center;
+padding:9px;
+font-size:0.95em;
+font-family: 'Courier New';
+transition: all 0.5s;
+z-index:100;
+overflow:hidden;
+}
+
+
+
+a {
+color: #f0f0f0;
+transition: all 0.2s;
+letter-spacing:auto;
+padding:1% 1.5% 1% 1.5%;
+}
+
+
+
+
+#icon {
+transition: all 0.5s;
+filter:invert(85%);
+}
+
+
+.trending_image {
+filter:contrast(100%) grayscale(30%);
+transition: all 2.5s;
+}
+
+
+
+.ad {
+transition: all 0.2s;
+}
+
+.right {
+transition: all 0.2s;
+z-index:2;
+}
+
+
+
+h1 {
+font-size:3em;
+}
+
+p {
+font-size:1.5em;
+}
+
+
+
+#oompa_link, #oompa_link:hover, .normal, .normal:hover {
+text-decoration:none;
+color:black;
+font-weight:bold;
+letter-spacing:0px;
+}
+
+
+
+#readnow, #readnow2 {
+transition: all 0.25s;
+letter-spacing: 0px;
+}
+
+
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000c0;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  z-index:100;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius:0px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h1 {
+  margin-top: 0;
+  color: white;
+  border-radius:10px;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #33333300;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+
+</style>
+</head>
+<body>
+<div>
+<div id = "cover">
+
+</div>
+<div id = "navbar">
+<a title = "Home" onclick = "home()">home</a>
+<a title = "It's all about me!" onclick = "about()">about</a>
+<a title = "Wanna talk?" onclick = "contact()">contact</a>
+<a title = "What you probably came here for." onclick = "art()">art</a>
+<a title = "The beat goes on!" onclick = "more()">more</a>
+</div>
+
+<div id = "splash" style = "opacity:0%;display:none;transition:all 2.5s">
+
+<img onclick = "document.getElementById('puppy').click();" class = "trending_image notlocals2 notacaciagrove notalder2017" style= "z-index:5;margin-top:100%" width = "45%" height = "20%" src = "images/locals.png"></img>
+<img onclick = "document.getElementById('puppy2').click();" class = "trending_image notlocals notacaciagrove notalder2017" style= "z-index:5;" width = "50%" height = "20%" src = "images/locals2.png"> </img>
+<img onclick = "window.location.replace('acaciagrove.html')" class = "trending_image notlocals notlocals2 notalder2017" style= "z-index:5;" width = "42%" height = "15%" src = "images/acaciagrove.png"> </img>
+<img onclick = "window.location.replace('alder2017.html')" class = "trending_image notlocals notlocals2 notacaciagrove" style= "z-index:5;padding-left:15%;" width = "27%" height = "15%" src = "images/alder2017/alder2017.png"> </img>
+</div>
+  <a id = "puppy"class="realcontent button" style = "display:none;"href="#popup1"></a>
+  <a id = "puppy2"class="realcontent button" style = "display:none;"href="#popup2"></a>
+   <a id = "puppy3"class="realcontent button" style = "display:none;"href="#popup3"></a>
+
+<div id="popup1" style = "overflow-y:auto"class="overlay">
+  <div class=" popup" >
+ <img  width = "100%" style = "padding-bottom:10px" src = "images/locals.png"></img>
+ <h1 style = "color:black;font-size:16px;text-align:center;" >The Locals Collection</h1>
+<img style = "padding-bottom:10px;" width = "100%" src = "images/locals/carson.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals/pink.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals/rick.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals/winston.png"></img>
+<p style = "font-size:15px">Quarantine is no fun, let's just say that. Gone are the days where you could farm good material from the community just by walking around and keeping your ears open. But the collective silence alerted me to another hidden community, one that surrounds us, but keeps quiet. I talked up some of the locals, and they had plenty to say.
+Here, we have cameos from the Carson Mansion, the Arkley Center, and more.
+
+Those in my mailing list got a sneak-peek at the content, plus extras, and a more in-depth explanation on how this collection came to be. If that's something you're into, <a class = "normal" onclick = "clicked = false;locals();locals();trending();more();document.getElementById('closer').click();">let me know!</a>
+</p>
+    <a id = "closer" onclick = "window.location.replace('mobile.html')" style = "display:none;" class="close" href="#">&times;</a>
+	<center>
+<button  class = "realcontent" style = "font-size:20px;width:60%;text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();">Cool story, bro</button>
+</center> 
+ </div>
+</div>
+
+<div id="popup2" style = "overflow-y:auto"class="overlay">
+  <div class=" popup" >
+ <img  width = "100%" style = "padding-bottom:10px" src = "images/locals2.png"></img>
+ <h1 style = "color:black;font-size:16px;text-align:center;" >The Locals: Take 2</h1>
+<img style = "padding-bottom:10px;" width = "100%" src = "images/locals2/oompa.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals2/carnegie.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals2/library.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals2/museum.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals2/permit.png"></img>
+<img style = "padding-bottom:10px;"width = "100%" src = "images/locals2/sweater.png"></img>
+<p style = "font-size:15px">
+Welcome to The Locals: Take 2, where I paint more historic landmarks that seem to be everywhere I turn. This time around, <a id = "oompa_link" target = "_blank" href = "https://www.dicktaylorchocolate.com">Dick Taylor Craft Chocolate</a> was so awesome and let a teenage weirdo paint their building! I passed it one day and thought to myself, "Hmm, I wonder who really works there." Anyway, I hope I've done it (and all the nice oompa-loompas) justice. If you'd like to check out their stuff (believe me, it's all good), you have the link. Oh, and tell them Chan says "hey".
+Those in my mailing list got to see an email-exclusive comic from the collection, and more info on the compilation overall. <a class = "normal" onclick = "clicked = false;locals2();locals2();trending();more();document.getElementById('closer').click();">Don't miss out!</a>
+
+</p>
+    <a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
+	<center>
+<button  class = "realcontent" onclick = "window.location.replace('mobile.html')"style = "font-size:20px;width:60%;text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();">What's next?</button>
+</center> 
+ </div>
+</div>
+
+
+<div id = "trending" style = "opacity:0%;display:none;">
+<br>
+<img onclick = "clickedcheck2();locals()" class = "trending_image notlocals2 notacaciagrove notalder2017" style= "z-index:5;position:absolute;left:2.5%" width = "50%" height = "45%" src = "images/locals.png"></img>
+<img onclick = "clickedcheck2();locals2()" class = "trending_image notlocals notacaciagrove notalder2017" style= "z-index:5;position:absolute;left:52.5%" width = "50%" height = "45%" src = "images/locals2.png"> </img>
+<img onclick = "clickedcheck2();acaciagrove()" class = "trending_image notlocals notlocals2 notalder2017" style= "z-index:5;position:absolute;left:2.5%;top:55%" width = "42%" height = "35%" src = "images/acaciagrove.png"> </img>
+<img onclick = "clickedcheck2();alder2017()" class = "trending_image notlocals notlocals2 notacaciagrove" style= "z-index:5;position:absolute;left:60%;top:57%" width = "27%" height = "35%" src = "images/alder2017/alder2017.png"> </img>
+<div class = "trending_word notlocals2 notacaciagrove notalder2017" style = "z-index:6;background-color:#00000090;color:white;padding:5px;position:absolute;top:50%;padding-left:30%;left:2.5%;">The Locals Collection</div>
+<div class = "trending_word notlocals notacaciagrove notalder2017"style = "z-index:6;background-color:#00000090;color:white;padding:5px;position:absolute;top:50%;left:52.5%;padding-left:30%">The Locals: Take 2</div>
+<div class = "trending_word notlocals notlocals2 notalder2017"style = "z-index:6;background-color:#00000090;color:white;padding:5px;position:absolute;top:90%;padding-left:33%;left:2.5%;">The Acacia Grove</div>
+<div class = "trending_word notlocals notlocals2 notacaciagrove"style = "z-index:6;float:right;text-align:right;background-color:#00000090;color:white;padding:5px;position:absolute;width:42%;top:90%;left:52.5%;">The Alder Groove (2017) Re-release</div>
+<div id = "locals" style = "transition:all 0.5s;display:none;" >
+
+<img id = "localsslot" title = "Click to advance" onclick = "localschange()"style = "position:fixed;top:5%;left:0%;padding:2.5%;padding-left:54.5%;" src = "images/locals/carson.png" width = "40%" height = "85%"><img>
+
+<h1 style = "text-align:left;position:absolute;top:52%;left:0%;width:50%;padding-right:45.5%;padding-left:2%">Meet the locals!</h1>
+
+<p style = "font-size:16px;text-align:left;position:absolute;top:63%;left:0%;width:40%;padding-right:54.5%;padding-left:2%">
+
+Quarantine is no fun, let's just say that. Gone are the days where you could farm good material from the community just by walking around and keeping your ears open. But the collective silence alerted me to another hidden community, one that surrounds us, but keeps quiet. I talked up some of the locals, and they had plenty to say.
+Here, we have cameos from the Carson Mansion, the Arkley Center, and more.
+
+Those in my mailing list got a sneak-peek at the content, plus extras, and a more in-depth explanation on how this collection came to be. If that's something you're into, <a class = "normal" onclick = "clicked = false;locals();locals();trending();more()">let me know!</a>
+</p>
+
+</div>
+
+<div id = "locals2" style = "transition:all 0.5s;display:none;" >
+<img id = "locals2slot" title = "Click to advance" onclick = "locals2change()"style = "position:fixed;top:5%;left:0%;padding:2.5%;padding-left:5%;" src = "images/locals2/oompa.png" width = "40%" height = "85%"><img>
+
+<h1 style = "text-align:right;position:absolute;top:52%;left:0%;width:50%;padding-right:2%;padding-left:45.5%"> Here we go again!</h1>
+
+<p style = "font-size:16px;text-align:right;position:absolute;top:63%;left:0%;width:40%;padding-right:2%;padding-left:54.5%">
+
+
+Welcome to The Locals: Take 2, where I paint more historic landmarks that seem to be everywhere I turn. This time around, <a id = "oompa_link" target = "_blank" href = "https://www.dicktaylorcraftchocolate.com">Dick Taylor Craft Chocolate</a> was so awesome and let a teenage weirdo paint their building! I passed it one day and thought to myself, "Hmm, I wonder who really works there." Anyway, I hope I've done it (and all the nice oompa-loompas) justice. If you'd like to check out their stuff (believe me, it's all good), you have the link. Oh, and tell them Chan says "hey".
+Those in my mailing list got to see an email-exclusive comic from the collection, and more info on the compilation overall. <a class = "normal" onclick = "clicked = false;locals2();locals2();trending();more()">Don't miss out!</a>
+</p>
+
+</div>
+
+<div id = "acaciagrove"style = "display:none;" >
+<img id = "acaciagroveslot" title = "This is an e-book that you can read in your browser!" onclick = "window.location.replace('acaciagrove.html')"style = "position:fixed;top:5%;left:0%;padding:2.5%;padding-left:60%;" src = "images/acaciagrove/cover.png" width = "35%" height = "85%"><img>
+
+<h1 style = "font-size:2.8em;text-align:left;position:absolute;top:5%;left:0%;width:50%;padding-right:45.5%;padding-left:2%"> The Acacia Grove: An Alder Groove Collection</h1>
+
+<p style = "font-size:1em;text-align:left;position:absolute;top:22%;left:0%;width:50%;padding-right:54.5%;padding-left:2%">
+"So apparently I have some real guts making this book." Thus begins this Alder Groove collection, its themed contents spanning a three-year period. While a far cry from being the definitive Alder Groove treasury, this e-book exclusive marks and follows a transition in the comic's overall style, humor, and purpose. Watch as the Alder Groove transforms from a gag-a-day satire strip to "...a very refreshing and hilarious insight into the world of the modern teen."
+
+</p>
+
+<p id = "readnow" onclick = "window.location.replace('acaciagrove.html')" style = "z-index:5;background-color:black;color:white;font-size:30px;text-align:center;position:absolute;top:42%;margin-left:1%;padding:25px;width:40%;">
+READ NOW
+</p>
+
+</div>
+
+<div id = "alder2017" style = "display:none"  >
+<img id = "alder2017slot" title = "This is an e-book that you can read in your browser!" onclick = "window.location.replace('alder2017.html')"style = "filter:brightness(70%) contrast(200%);position:fixed;top:5%;left:0%;padding:2.5%;padding-left:5%;" src = "images/alder2017/cover.jpg" width = "35%" height = "85%"><img>
+
+<h1 style = "font-size:2.8em;text-align:right;position:absolute;top:5%;left:0%;width:50%;padding-right:2%;padding-left:45.5%"> The Alder Grove (2017) Re-release Treasury</h1>
+
+<p style = "font-size:0.9em;text-align:right;position:absolute;top:21%;left:0%;width:50%;padding-right:2%;padding-left:45.5%">
+This is where it began - 9th grade. I'd been drawing this comic for a year, and decided to compile my work into a book format. And then stow it away in a junk drawer, apparently, because it kinda, sorta...never saw the light of day. Until now! So I guess you could call it a "lost bits" collection, except some of the comics in this collection aren't exactly lost. Oh, and I left some typos in there for you. To really, really, add to the effect of "unreleased". Enjoy!
+</p>
+
+<p id = "readnow2" onclick = "window.location.replace('alder2017.html')" style = "z-index:5;background-color:black;color:white;font-size:30px;text-align:center;position:absolute;top:37%;margin-left:51%;padding:25px;width:40%;">
+READ NOW
+</p>
+
+
+</div>
+</div>
+</div>
+
+<div id = "contact" style = "opacity:0%;display:none;">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3v0U09R4uoqN4uEg1oFUqT7_LWK8qZv9MEpMyfk_a39o4Tg/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+<div id = "more" style = "opacity:0%;display:none;">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebP2Arq0vyLr5Wsv2aUw-kD5-y5Fe_KsqwvO3w9ylUGU4Mlw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+
+
+<div id = "art" style = "opacity:0%;display:none">
+<center>
+<img onclick = "window.location.replace('mobilepaintings.html');"class = "icons" src = "images/collection_icons/day.jpg" style = "padding:10px" width = "70%" height = "15%"></img>
+<img class = "icons"onclick = "window.location.replace('mobilecomics.html');"src = "images/collection_icons/summer.png" style = "padding:10px" width = "70%" height = "15%"></img>
+<img onclick = "window.location.replace('mobilepaintings.html');"class = "icons"src = "images/collection_icons/night.jfif" style = "padding:10px" width = "70%" height = "30%"></img>
+<img onclick = "window.location.replace('mobilepaintings.html');" class = "icons"src = "images/collection_icons/sunday.jpg" style = "padding:10px" width = "70%" height = "12.5%"></img>
+<img class = "icons"onclick = "window.location.replace('mobilecomics.html');"src = "images/collection_icons/fan.jpg" style = "padding:10px" width = "70%" height = "12.5%"></img>
+ <img  class = "icons"onclick = "window.location.replace('mobilecomics.html');" style = "padding:10px;filter:brightness(115%) contrast(125%)" width = "70%" height = "15%"  src = "images/collection_icons/school.jpg"></img>
+<img class = "icons"onclick = "window.location.replace('mobilecomics.html');"src = "images/collection_icons/attempt.jpg" style = "padding:10px" width = "70%" height = "12.5%"></img>
+</center>
+</div>
+<div id = "about" style = "opacity:0%;display:none;text-align:center;" >
+<img src = "images/me.png" style = "position:relative;margin-top:15px;text-align:center;" width="95%"></img>
+<h1 style = "font-size:1.3em;position:relative;text-align:center;">Hello there!</h1>
+<p style = "font-size:0.9em;position:relative;text-align:center;padding:5px;">Hi! I'm <b>Chandler Mrotzek</b>, a multi-media cartoonist/entrepeneurial type who's always up to something. You've stumbled upon some of the most socially-awkward, intriguingly dull, and sophisticatedly pun-filled comics on the web. This comic, <b>The Alder Groove</b> , has been described as a "satire of high school students struggling to meet the rising standards that school gives them, some of which are algebra, exams, and even the dreaded syllabus." Normally, I would try and describe my comic to you myself, but that's the clearest fan explanation I've ever heard, so if it ain't broke, don't fix it. Humor is tough, and I'm willing to claim it's slightly more challenging than say, surfing. Or successfully trespassing. What I mean to say here, is that with the community's support, interest, and inspiration, I'll keep giving you all <b>"a refreshing and hilarious insight into the world of the modern teen.</b>" So take a look around, feel free to contact me (submissions, ideas, and fan art is always accepted), but most importantly, <b>have fun!</b></p>
+<img title = "Get N or get out!" style = "font-size:0.9em;position:relative;text-align:center;padding-bottom:30px;"width = "90%"src = "images/signature.png"></img>
+</div>
+
+
+<script>
+window.mobileCheck = function() {
+  let check = false;
+  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+  if (check === false){
+window.location.replace('index.html');
+}
+};
+document.addEventListener ("keydown", function (zEvent) {
+    if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.key === "f") {  // case sensitive
+        alert('Hi there, developer! This site was last updated at 1:26 PM on 1/4/2021. I fixed a text-sizing bug in the "about" wing of the site. If you found this by accident, you win the game! This is a developer shortcut for seeing what version of the site is currently active. \n\nIf you would like to help me work on the site, head on over to Github and check out or even contribute to the site beta I have hosted over there. Good job!\n\nhttps://github.com/chanman805/TAG');
+    }
+} );
+var locals2feed = ["oompa","carnegie","library","museum","permit","sweater"];
+var locals2chooser = 0;
+var locals2change = function(){
+locals2chooser++;
+document.getElementById("locals2slot").src = "images/locals2/"+locals2feed[locals2chooser]+".png";
+if (locals2chooser>=6){
+locals2chooser = 0;
+}
+};
+
+var localsfeed = ["carson","winston","rick", "pink"];
+var localschooser = 0;
+var localschange = function(){
+localschooser++;
+document.getElementById("localsslot").src = "images/locals/"+localsfeed[localschooser]+".png";
+if (localschooser>=4){
+localschooser = 0;
+}
+};
+
+var clicked = false;
+var clickedcheck2 = function(){
+if (clicked === false){
+
+var cusid_ele = document.getElementsByClassName('trending_word');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+	item.style.transition = "all 0.5s";
+    item.style.backgroundColor = "#000000";
+	
+}
+
+} else {
+
+var cusid_ele = document.getElementsByClassName('trending_word');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+	item.style.transition = "all 0.5s";
+    item.style.backgroundColor = "#00000090";
+	
+}
+
+}
+};
+var clickedcheck = function(){
+clicked = true;
+
+};
+var locals = function(){
+if (clicked ==false){
+var cusid_ele = document.getElementsByClassName('notlocals');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "none";
+		document.getElementById("locals").style.display = "inline";
+}
+clicked = true;
+} else {
+var cusid_ele = document.getElementsByClassName('notlocals');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "inline";
+		document.getElementById("locals").style.display = "none";
+}
+clicked = false;
+}
+};
+
+var alder2017 = function(){
+if (clicked ==false){
+var cusid_ele = document.getElementsByClassName('notalder2017');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "none";
+	document.getElementById("alder2017").style.display = "inline";
+}
+clicked = true;
+} else {
+var cusid_ele = document.getElementsByClassName('notalder2017');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "inline";
+	document.getElementById("alder2017").style.display = "none";
+}
+clicked = false;
+}
+};
+
+var locals2 = function(){
+if (clicked ==false){
+var cusid_ele = document.getElementsByClassName('notlocals2');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "none";
+	document.getElementById("locals2").style.display = "inline";
+	document.getElementById("locals2").style.opacity = "100%";
+}
+clicked = true;
+
+} else {
+var cusid_ele = document.getElementsByClassName('notlocals2');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "inline";
+	document.getElementById("locals2").style.display = "none";
+	document.getElementById("locals2").style.opacity= "0%";
+}
+clicked = false;
+}
+};
+
+var acaciagrove = function(){
+if (clicked ==false){
+var cusid_ele = document.getElementsByClassName('notacaciagrove');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "none";
+		document.getElementById("acaciagrove").style.display = "inline";
+}
+clicked = true;
+} else {
+var cusid_ele = document.getElementsByClassName('notacaciagrove');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+    item.style.display = "inline";
+	document.getElementById("acaciagrove").style.display = "none";
+}
+clicked = false;
+}
+};
+
+
+
+var cover = document.getElementById("cover").style;
+var base = document.body.style;
+var trending_wing = document.getElementById("trending").style;
+var contact_wing = document.getElementById("contact").style;
+var more_wing = document.getElementById("more").style;
+var art_wing = document.getElementById("art").style;
+var about_wing = document.getElementById("about").style;
+var ads = document.getElementById("splash").style;
+
+var home = function(){
+ads.transition = "all 1s, opacity 1.2s";
+ads.opacity="100%";
+ads.display="inline";
+document.body.style.backgroundImage = "url('images/logo.png')";
+var welcomemessages = ["Like a boss!","Still standing!","Quarantine!","It was I, Dio!","Mamma Mia!","#WhyImSingle","It was I, Dio!","You do you!","I like it!","& Knuckles!","One Blue Boi!","Numero Uno!","Since 2016!","Still Funny!","This thing on?","Still relevant!","Stay safe!","Wear masks!","Numero Uno!","I lava you!","#ImSoBored!","Don't do it!","Give us Gordon!","Leave a tip!","& Knuckles!","You do you!","XD XD XD XD","I'm an otaku!","Amazing!","Spectacular!","Still here!","Not irrelevant!","Peek-a-boo!","Since 2016!","Rad, bro!","& Knuckles!","With sound!","In Technicolor!","#thatsmymom","I'm your dad!","& Knuckles!","You're awesome!","For mobile!","Moms love it!","Parents love it!","Radical!","AAAAAAAAAAAAA","Now I'm here!","Just beat it!","All the things!","Dance for me!"];
+about_wing.transition = "all 1s, opacity 0.2s";
+about_wing.opacity = "0%";
+setTimeout(about_wing.display="none",500);
+
+art_wing.transition = "all 1s, opacity 0.2s";
+art_wing.opacity = "0%";
+setTimeout(art_wing.display="none",500);
+
+cover.opacity = "0%";
+cover.top = "0%"
+trending_wing.transition = "all 1s, opacity 0.2s";
+trending_wing.opacity = "0%";
+setTimeout(trending_wing.display="none",500);
+
+contact_wing.transition = "all 1s, opacity 0.2s";
+contact_wing.opacity = "0%";
+setTimeout(contact_wing.display="none",500);
+
+more_wing.transition = "all 1s, opacity 0.2s";
+more_wing.opacity = "0%";
+setTimeout(more_wing.display="none",500);
+
+};
+
+
+var trending = function(){
+ads.transition = "all 1s, opacity 1.2s";
+ads.opacity="0%";
+ads.display="none";
+document.body.style.backgroundImage = "none";
+
+
+contact_wing.transition = "all 1s, opacity 0.2s";
+contact_wing.opacity = "0%";
+setTimeout(contact_wing.display="none",500);
+more_wing.transition = "all 1s, opacity 0.2s";
+more_wing.opacity = "0%";
+setTimeout(more_wing.display="none",500);
+cover.top = "0%"
+cover.opacity = "100%";
+trending_wing.display = "inline";
+trending_wing.transition = "all 1s, opacity 1.5s";
+trending_wing.opacity = "100%";
+art_wing.transition = "all 1s, opacity 0.2s";
+art_wing.opacity = "0%";
+setTimeout(art_wing.display="none",500);
+about_wing.transition = "all 1s, opacity 0.2s";
+about_wing.opacity = "0%";
+setTimeout(about_wing.display="none",500);
+
+
+};
+
+
+
+var about = function(){
+ads.transition = "all 1s, opacity 1.2s";
+ads.opacity="0%";
+ads.display="none";
+document.body.style.backgroundImage = "none";
+cover.top = "0%"
+cover.opacity = "100%";
+
+about_wing.display = "inline-block";
+about_wing.transition = "all 1s, opacity 1.5s";
+about_wing.opacity = "100%";
+art_wing.transition = "all 1s, opacity 0.2s";
+art_wing.opacity = "0%";
+setTimeout(art_wing.display="none",500);
+
+
+trending_wing.transition = "all 1s, opacity 0.2s";
+trending_wing.opacity = "0%";
+setTimeout(trending_wing.display="none",500);
+
+contact_wing.transition = "all 1s, opacity 0.2s";
+contact_wing.opacity = "0%";
+setTimeout(contact_wing.display="none",500);
+
+more_wing.transition = "all 1s, opacity 0.2s";
+more_wing.opacity = "0%";
+setTimeout(more_wing.display="none",500);
+};
+
+var art = function(){
+ads.transition = "all 1s, opacity 1.2s";
+ads.opacity="0%";
+ads.display="none";
+document.body.style.backgroundImage = "none";
+cover.top = "0%"
+cover.opacity = "100%";
+trending_wing.opacity = "0%";
+setTimeout(trending_wing.display="none",500);
+
+
+contact_wing.transition = "all 1s, opacity 0.2s";
+contact_wing.opacity = "0%";
+setTimeout(contact_wing.display="none",500);
+more_wing.transition = "all 1s, opacity 0.2s";
+more_wing.opacity = "0%";
+setTimeout(more_wing.display="none",500);
+cover.top = "0%"
+cover.opacity = "100%";
+art_wing.display = "inline";
+art_wing.transition = "all 1s, opacity 1.5s";
+art_wing.opacity = "100%";
+about_wing.transition = "all 1s, opacity 0.2s";
+about_wing.opacity = "0%";
+setTimeout(about_wing.display="none",500);
+
+
+};
+
+var contact = function(){
+ads.transition = "all 1s, opacity 1.2s";
+ads.opacity="0%";
+ads.display="none";
+document.body.style.backgroundImage = "none";
+
+
+more_wing.transition = "all 1s, opacity 0.2s";
+more_wing.opacity = "0%";
+setTimeout(more.display="none",500);
+trending_wing.transition = "all 1s, opacity 0.2s";
+trending_wing.opacity = "0%";
+setTimeout(trending_wing.display="none",500);
+cover.top = "0%"
+cover.opacity = "100%";
+contact_wing.display = "inline";
+contact_wing.transition = "all 1s, opacity 1.5s";
+contact_wing.opacity = "100%";
+art_wing.transition = "all 1s, opacity 0.2s";
+art_wing.opacity = "0%";
+setTimeout(art_wing.display="none",500);
+about_wing.transition = "all 1s, opacity 0.2s";
+about_wing.opacity = "0%";
+setTimeout(about_wing.display="none",500);
+
+
+
+};
+
+var more = function(){
+ads.transition = "all 1s, opacity 1.2s";
+ads.opacity="0%";
+ads.display="none";
+document.body.style.backgroundImage = "none";
+
+contact_wing.transition = "all 1s, opacity 0.2s";
+contact_wing.opacity = "0%";
+setTimeout(contact_wing.display="none",500);
+
+trending_wing.transition = "all 1s, opacity 0.2s";
+trending_wing.opacity = "0%";
+setTimeout(trending_wing.display="none",500);
+cover.top = "0%"
+cover.opacity = "100%";
+more_wing.display = "inline";
+more_wing.transition = "all 1s, opacity 1.5s";
+more_wing.opacity = "100%";
+art_wing.transition = "all 1s, opacity 0.2s";
+art_wing.opacity = "0%";
+setTimeout(art_wing.display="none",500);
+about_wing.transition = "all 1s, opacity 0.2s";
+about_wing.opacity = "0%";
+setTimeout(about_wing.display="none",500);
+
+
+};
+
+window.onload = function(){
+mobileCheck();
+cover.opacity = "100%";
+cover.top = "0%"
+document.body.style.backgroundImage = "url('images/logo.png')";
+home();
+};
+
+var bye = function(){
+document.title = "Hey! Where'd you go?";
+};
+
+var hi = function(){
+document.title = "The Alder Groove";
+}
+
+var gbstop = function(){
+alert("\nI don't have anything to display right now. I'm working on a few projects at the moment and when I have time, I'll post what I'm doing here for you to enjoy. If you want to offer your help, services, or have something else to say, feel free to contact me using the form! In the meantime, be patient...\n\n-C. Mrotzek");
+contact();
+};
+
+window.onblur = function(){
+setTimeout(bye, 3000);
+};
+
+window.onfocus = function(){
+document.title = "Ah, you're back."
+setTimeout(hi, 1500);
+};
+</script>
+
+</body>
+</html>

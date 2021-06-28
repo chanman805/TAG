@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Alder Groove</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="The Alder Groove is a web comic about high school.">
+<meta name="description" content="The Alder Groove is a web comic that explores the ups, downs, and drama of high school. ">
+<meta name="author" content="Chandler Mrotzek">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
+<link rel="icon" href="images/light_icon.png" id="light-scheme-icon">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0px;
+  color: black;
+ background-color:white;
+ background-image:url('images/loader.gif');
+background-size:contain;
+background-repeat:no-repeat;
+background-position:left;
+font-family: 'Courier Prime', bold;
+
+ scrollbar-gutter:auto;
+transition: all 0.5s;
+}
+
+
+.image {
+padding:5% 5% 0% 13.5%;
+padding-bottom:0%;
+width:30%; 
+height:50%;
+transition: width 0.5s, height 0.5s, hover 0.5s, padding 0.5s;
+transition-delay:0.5s;
+}
+.image:hover {
+cursor:pointer;
+}
+
+.notspecial {
+transition: width 1s, height 1s, opacity 1s;
+}
+
+.notspecial:hover {
+cursor:pointer;
+transition: width 0.2s, height 0.2s;
+padding:0%;
+width:26%;
+height:14%;
+}
+
+.special {
+transition: width 1s, height 1s, opacity 1s;
+}
+
+.special:hover {
+cursor:pointer;
+transition: width 0.2s, height 0.2s;
+padding:0%;
+width:26%;
+height:14%;
+}
+
+p {
+font-size: 20px;
+}
+
+h1 {
+
+font-size:55px;
+
+}
+
+
+#navbar {
+text-align:center;
+margin:10px;
+position:sticky;
+top:auto;
+background-color: #1a1a1a;
+color:white;
+width:90%;
+padding:10px;
+font-size:20px;
+font-family: 'Courier New';
+transition: all 0.5s;
+z-index:100;
+}
+
+#navbar:hover {
+transition: all 1s;
+background-color: #3f3f3f;
+cursor:default;
+}
+
+.icons:hover{
+cursor:pointer;
+filter: brightness(110%);
+transition: all 1.5s;
+}
+
+a {
+color: #f0f0f0;
+transition: all 0.2s;
+letter-spacing:auto;
+padding:1% 1.5% 1% 1.5%;
+}
+
+a:hover {
+color:#ffffff;
+transition: all 0.2s;
+letter-spacing:1px;
+cursor:pointer;
+}
+
+
+a:link {
+  color: white;
+  text-decoration:none;
+}
+a:visited {
+  color: white;
+  
+}
+
+
+#icon {
+transition: all 0.5s;
+filter:invert(85%);
+}
+
+#icon:hover {
+transition: all 0.5s;
+cursor:pointer;
+filter:invert(100%);
+}
+
+#comicsfeed {
+cursor:pointer;
+transition:all 0.5s;
+filter:brightness(105%) contrast(105%);
+
+
+}
+
+#comicsfeed:hover {
+cursor:pointer;
+filter: brightness(98%) contrast(150%);
+
+}
+
+#ads{
+position:absolute;
+float:left;
+padding:10px;
+z-index:100;
+}
+
+#ads:hover {
+cursor:pointer;
+}
+
+
+.ad {
+transition: all 0.2s;
+}
+
+
+
+.ad:hover {
+width:17.5%;
+transition:all 0.1s;
+}
+
+#return {
+cursor:default;
+transition: all 0.2s;
+width: 20%;
+height:32%;
+}
+#return:hover {
+cursor:pointer;
+transition: all 0.2s;
+width: 21%;
+height:33%;
+}
+
+#slot1:hover, #slot2:hover {
+cursor:pointer;
+transition:all 0.2s;
+transform: scale(1.015);
+}
+
+#summer {
+filter: contrast(200%);
+}
+
+#scroller:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+<div id="navbar">
+  <a style = "text-align:center"onclick = "window.location.reload(true);">The Gallery - Comics</a>
+</div>
+
+<p style = "color:gray;font-size:12px;text-align:center;" >(Scroll to view collections)</p>
+
+ <img  style = "width:90%;padding:10px;padding-bottom:0px"  src = "images/collection_icons/attempt.jpg"></img>
+ <p onclick = "window.location.replace('mobile.html')" style = "color:gray;font-size:12px;text-align:center;" >I really can't stay ></p>
+ <img id = "at1"  style = "width:90%;padding:10px;"  src = "images/comics/01.png"></img>
+<img id = "at2" style = "width:90%;padding:10px;"  src = "images/comics/09.png"></img>
+<img id = "at3"  style = "width:90%;padding:10px;"  src = "images/comics/011.png"></img>
+<img id = "at4" style = "width:90%;padding:10px;"  src = "images/comics/014.png"></img>
+<img id = "at5"  style = "width:90%;padding:10px;"  src = "images/comics/017.png"></img>
+<img id = "at6" style = "width:90%;padding:10px;"  src = "images/comics/018.png"></img>
+
+ <img  style = "width:90%;padding:10px;"  src = "images/collection_icons/summer.png"></img>
+  <p onclick = "window.location.replace('mobile.html')" style = "color:gray;font-size:12px;text-align:center;" >I've got to go away ></p>
+ <img id = "s1"  style = "width:90%;padding:10px;"  src = "images/comics/summer/a.png"></img>
+<img id = "s2" style = "width:90%;padding:10px;"  src = "images/comics/summer/b.png"></img>
+<img id = "s3"  style = "width:90%;padding:10px;"  src = "images/comics/summer/c.png"></img>
+<img id = "s4" style = "width:90%;padding:10px;"  src = "images/comics/summer/d.png"></img>
+<img id = "s5"  style = "width:90%;padding:10px;"  src = "images/comics/summer/e.png"></img>
+<img id = "s6" style = "width:90%;padding:10px;"  src = "images/comics/summer/f.png"></img>
+
+ <img  style = "width:90%;padding:10px;filter:contrast(110%);"  src = "images/collection_icons/fan.jpg"></img>
+  <p onclick = "window.location.replace('mobile.html')" style = "color:gray;font-size:12px;text-align:center;" >This evening has been so very nice ></p>
+ <img id = "f1"  style = "width:90%;padding:10px;"  src = "images/comics/favorites/1.png"></img>
+<img id = "f2" style = "width:90%;padding:10px;"  src = "images/comics/favorites/2.png"></img>
+<img id = "f3"  style = "width:90%;padding:10px;"  src = "images/comics/favorites/3.jpg"></img>
+<img id = "f4" style = "width:90%;padding:10px;"  src = "images/comics/favorites/4.png"></img>
+<img id = "f5"  style = "width:90%;padding:10px;"  src = "images/comics/favorites/5.png"></img>
+<img id = "f6" style = "width:90%;padding:10px;"  src = "images/comics/favorites/6.jpg"></img>
+<img id = "f7"  style = "width:90%;padding:10px;"  src = "images/comics/favorites/7.jpg"></img>
+<img id = "f8" style = "width:90%;padding:10px;"  src = "images/comics/favorites/8.jpg"></img>
+<img id = "f9"  style = "width:90%;padding:10px;"  src = "images/comics/favorites/9.png"></img>
+
+ <img  style = "width:90%;padding:10px;filter:brightness(115%) contrast(120%);"  src = "images/collection_icons/school.jpg"></img>
+  <p onclick = "window.location.replace('mobile.html')" style = "color:gray;font-size:12px;text-align:center;" >My mother will start to worry, and so on ></p>
+ <img id = "sc1"  style = "width:90%;padding:10px;"  src = "images/comics/school/1.png"></img>
+<img id = "sc2" style = "width:90%;padding:10px;"  src = "images/comics/school/2.png"></img>
+<img id = "sc3"  style = "width:90%;padding:10px;"  src = "images/comics/school/3.png"></img>
+<img id = "sc4" style = "width:90%;padding:10px;"  src = "images/comics/school/4.png"></img>
+<img id = "sc5"  style = "width:90%;padding:10px;"  src = "images/comics/school/5.png"></img>
+<img id = "sc5"  style = "width:90%;padding:10px;"  src = "images/comics/school/1.jpeg"></img>
+<img id = "sc5"  style = "width:90%;padding:10px;"  src = "images/comics/school/2.jpeg"></img>
+<img id = "sc5"  style = "width:90%;padding:10px;"  src = "images/comics/school/3.jpeg"></img>
+<img id = "sc5"  style = "width:90%;padding:10px;"  src = "images/comics/school/4.jpeg"></img>
+
+
+<p style = "background-color:black;color:white;padding:10px;text-align:center;" >Like what you see? Hop onto a computer to view more content.</p>
+ 
+ <p onclick = "window.location.replace('mobile.html')" style = "background-color:black;color:white;padding:10px;text-align:center;" >Take me back instead ></p>
+
+<br>
+
+ 
+ 
+ 
+
+</body>
+<script>
+
+window.onload = function(){
+document.body.style.backgroundImage = "none";
+};
+
+document.body.addEventListener('scroll', function(event)
+{
+    var element = event.target;
+    if (element.scrollHeight - element.scrollTop === element.clientHeight)
+    {
+        document.getElementById("scroller").innerHTML = "Back to top?";
+ready = true;
+    }
+});
+
+</script>
+</html> 
