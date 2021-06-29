@@ -40,6 +40,7 @@ margin-left:auto;
 margin-right:auto;
 overflow:hidden;
 overflow-y:auto;
+ height:100%;
 }
 
 #body {
@@ -121,7 +122,7 @@ transition: all 1.5s;
 
 
 
-<button class = "item" style = "z-index:100!important;border:none;outline:none;background-color:black;color:white;border-radius:20px;padding:20px;font-size:1em;font-family: 'Courier New';margin-top:15vmax;cursor:pointer;margin-bottom:5vmax" onclick = "window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd3v0U09R4uoqN4uEg1oFUqT7_LWK8qZv9MEpMyfk_a39o4Tg/viewform?usp=sf_link';">Wanna leave me a note?</button>
+<button class = "item" style = "z-index:100!important;border:none;outline:none;background-color:black;color:white;border-radius:20px;padding:20px;font-size:5vmin;font-family: 'Courier New';margin-top:15vmax;cursor:pointer;margin-bottom:5vmax" onclick = "window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd3v0U09R4uoqN4uEg1oFUqT7_LWK8qZv9MEpMyfk_a39o4Tg/viewform?usp=sf_link';">Wanna leave me a note?</button>
 </div>
 </body>
 <script>
@@ -144,6 +145,11 @@ slideshow(counter);
 };
 
 window.onload = function(){
+
+  setTimeout(function () {
+            window.scrollTo(0, 0);
+        },2);
+ 
 
 slideshow(0);
 
