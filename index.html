@@ -6,6 +6,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
 
+body::-webkit-scrollbar {
+width:20px;
+}
+
+
+
+
+
+body::-webkit-scrollbar-track{
+background-color:Transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #00000090;
+  border-radius:0px;
+  margin:20px;
+}
+
 body, html {
 background-color:white;
 color:black;
@@ -17,6 +35,8 @@ font-size:1em;
 width:50%;
 margin-left:auto;
 margin-right:auto;
+overflow:hidden;
+overflow-y:auto;
 }
 
 #body {
@@ -88,16 +108,21 @@ transition: all 1.5s;
 
 <p class = "item">If it's okay with all of you, I'd like to close the book and open another one.</p>
 
- <img class = "item" src= "legacy/images/ha.png" width = "100%" style = "border-radius:0px"></img>
+ <img class = "item" src= "legacy/images/panel2.png" width = "100%"  style = "filter:grayscale(50%) brightness(105%) contrast(125%);border-radius:20px"></img>
 
-<p class = "item">So thanks. </p>
+<p class = "item">So thanks.</p>
 
-<p class = "item">To all of you who critiqued and proofread my drafts, thanks. And to all of you who laughed, thanks. </p>
-
-<p class = "item">Thanks. </p>
+<p class = "item">To all of you who critiqued and proofread my drafts, thanks. And to all of you who laughed at the final result, thanks. </p>
 
 
+<p class = "item">But most importantly, thank you for your support.</p>
 
+
+ <img class = "item" src= "legacy/images/logo.png" width = "100%"  style = "transform:scale(1.75);margin-top:7.5vmax;border-radius:20px"></img>
+
+
+
+<button style = "z-index:100!important;border:none;outline:none;background-color:black;color:white;border-radius:20px;padding:20px;font-size:1em;font-family: 'Courier New';margin-top:7.5vmax;cursor:pointer;" onclick = "window.location.href = 'https://forms.gle/h1CJPA18hzjB47js8';">Wanna leave me a note?</button>
 </div>
 </body>
 <script>
@@ -110,7 +135,7 @@ counter = counter+1;
 
 setTimeout(function(){
 slideshow(counter);
-},0);
+},4000);
 };
 
 window.onload = function(){
