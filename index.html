@@ -126,7 +126,13 @@ transition: all 1.5s;
 </body>
 <script>
 
+window.onclick = function(){
+page_speed=page_speed/2;
+};
+
 var counter = 0;
+
+var page_speed = 4000;
 
 var slideshow = function(num){
 document.getElementsByClassName('item')[num].style.opacity = "100%";
@@ -134,7 +140,7 @@ counter = counter+1;
 
 setTimeout(function(){
 slideshow(counter);
-},4000);
+},page_speed);
 };
 
 window.onload = function(){
